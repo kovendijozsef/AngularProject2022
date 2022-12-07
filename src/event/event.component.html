@@ -1,0 +1,22 @@
+<table>
+  <thead>
+  <tr>
+    <th>Race Name</th>
+    <th>Country</th>
+    <th>Date</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let event of events">
+    <td>{{event.raceName}}</td>
+    <td>{{event.country}}</td>
+    <td>{{event.date}}</td>
+
+
+  </tr>
+
+  </tbody>
+
+</table>

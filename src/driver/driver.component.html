@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Team</th>
+      <th>Points</th>
+      <th>Age</th>
+      <th>Racing number</th>
+      <th>Team logo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let driver of drivers">
+      <td>{{driver.name}}</td>
+      <td *ngIf="driver.team !== null else noTeam">{{driver.team.name}}</td>
+      <ng-template #noTeam>No team</ng-template>
+      <td>{{driver.points}}</td>
+      <td>{{driver.age}}</td>
+      <td>{{driver.racingNumber}}</td>
+      <img src="{{driver.imagePath}}" width="50">
+
+    </tr>
+
+  </tbody>
+
+</table>

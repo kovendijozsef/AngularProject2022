@@ -1,0 +1,27 @@
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Nationality</th>
+    <th>Drivers</th>
+    <th>Points</th>
+    <th>Team Logo</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let team of teams">
+    <td>{{team.name}}</td>
+    <td>{{team.nationality}}</td>
+    <td *ngFor="let driver of team.drivers">{{driver.name}}</td>
+    <td>{{team.points}}</td>
+    <img src="{{team.imagePath}}" alt="team logo" height="50">
+
+
+  </tr>
+
+  </tbody>
+
+</table>
+
+

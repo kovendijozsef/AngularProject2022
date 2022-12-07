@@ -1,0 +1,52 @@
+<div class="content">
+  <h1>Create Team</h1>
+
+
+
+  <form [formGroup]="createTeamForm" (ngSubmit)="addTeam()">
+    <div class="form-container">
+
+      <div>
+        Driver 1
+        <select class="form-field select" formControlName="driver1">
+          <option value="noDriver"> No driver </option>
+          <option *ngFor="let driver of teamlessDrivers"
+                  [ngValue]=driver >{{driver.name}}</option>
+        </select>
+      </div>
+
+      <div>
+        Driver 2
+        <select class="form-field select" formControlName="driver2">
+          <option value="noDriver"> No driver </option>
+          <option *ngFor="let driver of teamlessDrivers"
+                  [ngValue]=driver >{{driver.name}}</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="teamName">Team Name</label>
+        <input type="text" class="form-control" id="teamName" placeholder="Enter team name..." formControlName="name">
+      </div>
+
+      <div>
+        <label for="teamNationality">Team Nationality</label>
+        <input type="text" class="form-control" id="teamNationality" placeholder="Enter team nationality..." formControlName="nationality">
+      </div>
+
+      <div>
+        <label for="teamLogo">Team Logo</label>
+        <input type="text" class="form-control" id="teamLogo" placeholder="Enter team logo url..." formControlName="logo">
+      </div>
+
+
+      <div>
+        <button type="submit" class="button">Create Team</button>
+      </div>
+
+    </div>
+  </form>
+
+
+
+</div>

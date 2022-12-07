@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Length</th>
+      <th>Lap Record</th>
+      <th>Lap Record Holder</th>
+      <th>Circuit Image</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+  <tr *ngFor="let circuit of circuits">
+    <td>{{circuit.name}}</td>
+    <td>{{circuit.country}}</td>
+    <td>{{circuit.length}}</td>
+    <td *ngIf="circuit.lapRecordHolder !== null else noTime">{{circuit.lapRecord}}</td>
+    <ng-template #noTime>No time</ng-template>
+    <td *ngIf="circuit.lapRecordHolder !== null else noTeam">{{circuit.lapRecordHolder.name}}</td>
+    <ng-template #noTeam>No lap record holder</ng-template>
+    <img src="{{circuit.imagePath}}" alt="Circuit image" height="50">
+
+
+
+
+  </tr>
+
+  </tbody>
+
+</table>
